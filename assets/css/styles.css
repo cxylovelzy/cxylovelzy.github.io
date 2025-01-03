@@ -1,0 +1,251 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "DancingScript-SemiBold";
+  src: url("/assets/fonts/DancingScript-SemiBold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  color: rgb(0, 0, 0);
+  background-image: url("/assets/images/chikawa.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.navbar {
+  font-family: "DancingScript-SemiBold", sans-serif;
+  font-size: 20px;
+  position: relative;
+  overflow: hidden;
+  height: 100px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffb7c0;
+  z-index: 1;
+  border-radius: 15px;
+}
+
+.navbar .nav-links {
+  position: relative;
+  z-index: 2;
+  display: flex;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  transition: background-color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#music-controls {
+  position: fixed;
+  left: -50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.4509803922);
+  color: #000000;
+  padding: 10px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: left 0.3s ease;
+}
+
+#music-controls.hidden {
+  display: none;
+}
+
+#music-controls:hover {
+  left: 0;
+}
+
+#music-controls .control-icon {
+  background-color: rgba(255, 183, 191, 0.5647058824);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#music-controls .control-icon:hover {
+  background-color: #ffb7c0;
+}
+
+/* 播放图标 */
+#music-controls .control-icon.play::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 暂停图标 */
+#music-controls .control-icon.pause::before,
+#music-controls .control-icon.pause::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 20px;
+  background-color: #fff;
+}
+
+#music-controls .control-icon.pause::before {
+  left: 10px;
+}
+
+#music-controls .control-icon.pause::after {
+  left: 25px;
+}
+
+/* 静音图标 */
+#music-controls .control-icon.mute {
+  background-color: #ffb7c0;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#music-controls .control-icon.mute::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 10px solid #fff;
+  left: 15px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#music-controls .control-icon.mute::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background-color: #fff;
+  left: 15px;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* 取消静音图标 */
+#music-controls .control-icon.unmute::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 10px solid #fff;
+  left: 15px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#music-controls .control-icon.unmute::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background-color: #fff;
+  left: 15px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform: rotate(45deg);
+}
+
+#music-controls .control-icon.unmute::after::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+#music-controls input[type=range] {
+  width: 20px;
+  height: 150px;
+  appearance: slider-vertical; /* 移除默认样式 */
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+/* 滑动条样式 */
+#music-controls input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 183, 191, 0.6784313725); /* 滑动条颜色 */
+  border-radius: 5px; /* 可选：圆角 */
+}
+
+/* 滑块样式 */
+#music-controls input[type=range]::-webkit-slider-thumb {
+  appearance: slider-vertical;
+  width: 10px; /* 滑块宽度 */
+  height: 10px; /* 滑块高度 */
+  background-color: #ffb7c0; /* 滑块颜色 */
+  border-radius: 50%; /* 圆形滑块 */
+  cursor: pointer;
+  margin-top: 0; /* 移除可能影响拖动的margin-top */
+}
+
+/*# sourceMappingURL=styles.css.map */
