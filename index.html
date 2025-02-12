@@ -1,69 +1,49 @@
-﻿<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Test</title>
-        <link rel="stylesheet" href="/assets/css/styles.css">
-    </head>
-    <body>
-        <nav class="navbar">
-    <div class="nav-links">
-        
-            <a href="/" class="current">Home</a>
-        
-            <a href="/about.html">About</a>
-        
-    </div>
-</nav>
-        
-<audio id="bgMusic" loop preload="auto">
-    <source src="/assets/audios/%E8%8C%89%E3%81%B2%E3%82%8B%20-%20%E5%88%9D%E6%81%8B.mp3" type="audio/mpeg">
-</audio>
-
-<div id="music-controls" class="hidden">
-    <input id="volume-bar" type="range" min="0" max="1" step="0.01" value="0">
-    <button id="play-pause-btn" class="control-icon pause">
-        <span class="play-icon"></span>
-        <span class="pause-icon"></span>
-    </button>
-    <button id="mute-btn" class="control-icon mute">
-        <span class="mute-icon"></span>
-        <span class="unmute-icon"></span>
-    </button>
-</div>
-<script src="/assets/js/bgmbar.js"></script>
-        <div class="content">
-            <div class="salutation">
-亲爱的XXX:
-</div>
-
-<p>请允许我第一次这样称呼你（虽然这个称谓早已在我的心间酝酿过千百回），如你所见，这是一封蓄谋已久的告白信——或者说，是某个笨拙的恋爱新手终于鼓足勇气，将满溢的爱意化作文字传递给你。</p>
-
-<p>我该从何说起呢，就从你现在所听到的这首BGM说起吧（什么？你没开声音(ﾟдﾟ)，那现在打开还来得及）。我在24年十二月的第二个星期三清晨听到了这首名为《初恋》的歌，当我发觉歌词中的每一条都如同自己内心的独白时，我想我应该是无可救药地喜欢上你了。沉醉于你举手投足的温润，着迷于你专注热爱时眼底的星芒，惊喜于某个清晨你挑选的特别饮品，沦陷在每一次味蕾与心灵的双重共鸣里。这些细碎的光点，像春天的第一缕风唤醒整片森林，让我在每一个清晨都更确信——你是我最不愿错过的风景。</p>
-
-<p>时至今日，我依旧有一种不真实感</p>
-
-<p>之所以选择使用告白信的形式，一方面是为了留个纪念，另一方面也是因为我希望你可以在冷静之后再给出你的答案（才不是因为不敢当面表白…）。在我看来，感性的冲动决定爱情的开始，理性的选择决定爱情的归宿。我希望的是一份在深思熟虑后的爱情</p>
-
-<p>关于未来，我不敢承诺，因为轻诺必寡信。我</p>
-
-<p>最后，无论你是不是属于我的花，我都很感激你在我生命中的绽放，感谢你让我对爱情和生活都有了新的理解与向往。</p>
-
-<div class="closing">
-喜欢你的XXX
-</div>
-<div class="closing">
-1/？To be continue？
-</div>
-
-
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Password Protected Page</title>
+    <link rel="stylesheet" href="/assets/css/protect_styles.css">
+</head>
+<body>
+    <iframe id="contentFrame" frameBorder="0" allowfullscreen></iframe>
+    <div id="dialogWrap">
+        <div id="dialogWrapCell">
+            <div id="mainDialog">
+                <div id="dialogText">This page is password protected.</div>
+                <div id="passArea">
+                    <p id="passwordPrompt">Password</p>
+                    <input id="pass" type="password" name="pass" autofocus>
+                    <div id="messageWrapper">
+                        <span id="invalidPass" class="error">Sorry, please try again.</span>
+                        <span id="trycatcherror" class="error">Sorry, something went wrong.</span>
+                        <span id="success" class="notifyText">Success!</span>
+                        &nbsp;
+                    </div>
+                    <div id="buttonWrapper">
+                        <button id="toggleLanguage">En</button>
+                        <button id="submitPass" type="button">Submit</button>
+                    </div>
+                </div>
+                <div id="securecontext" class="error">
+                    <p>
+                        Sorry, but password protection only works over a secure connection. Please load this page via HTTPS.
+                    </p>
+                </div>
+                <div id="nocrypto" class="error">
+                    <p>
+                        Your web browser appears to be outdated. Please visit this page using a modern browser.
+                    </p>
+                </div>
+            </div>
         </div>
-        <!-- footer.html -->
-<footer>
-    <div class="footer-block">
-        &copy; Cao Xinye. All rights reserved.
     </div>
-</footer>
-    </body>
+    
+    <script>
+        window.pl = "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";
+    </script>
+    <script src="/assets/js/pagecrypt.js"></script>
+</body>
 </html>

@@ -50,7 +50,7 @@ body {
   background-image: url("/assets/images/chikawa.png");
   background-repeat: no-repeat;
   background-position: calc(0% + 100px) calc(100% - 60px);
-  background-size: 15%;
+  background-size: 20%;
   z-index: 2;
 }
 
@@ -92,8 +92,9 @@ body {
     background-size: 20%;
     background-position: calc(0% + 30px) calc(100% - 30px);
   }
-  .content p {
-    text-indent: 1em;
+  .content p,
+  .content .salutation,
+  .content .closing {
     padding-left: 0.5em;
     padding-right: 0.5em;
   }

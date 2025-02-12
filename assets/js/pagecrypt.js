@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
         zh: {
             dialogText: "此页面受密码保护。",
             passwordPrompt: "密码",
-            hint: "提示: ",
             invalidPass: "抱歉，请重试。",
             trycatcherror: "抱歉，出现错误。",
             success: "成功！",
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
         en: {
             dialogText: "This page is password protected.",
             passwordPrompt: "Password",
-            hint: "Hint: ",
             invalidPass: "Sorry, please try again.",
             trycatcherror: "Sorry, something went wrong.",
             success: "Success!",
@@ -28,12 +26,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
     };
 
-    let currentLang = 'en'; // 默认语言为英文
+    let currentLang = 'zh'; // 默认语言为英文
 
     function updateTexts(lang) {
         document.getElementById('dialogText').textContent = langTexts[lang].dialogText;
         document.getElementById('passwordPrompt').textContent = langTexts[lang].passwordPrompt;
-        document.getElementById('hint').textContent = langTexts[lang].hint;
         document.getElementById('invalidPass').textContent = langTexts[lang].invalidPass;
         document.getElementById('trycatcherror').textContent = langTexts[lang].trycatcherror;
         document.getElementById('success').textContent = langTexts[lang].success;
