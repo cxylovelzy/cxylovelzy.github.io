@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Password Protected Page</title>
+    <link rel="stylesheet" href="/assets/css/protect_styles.css">
+</head>
+<body>
+    <iframe id="contentFrame" frameBorder="0" allowfullscreen></iframe>
+    <div id="dialogWrap">
+        <div id="dialogWrapCell">
+            <div id="mainDialog">
+                <div id="dialogText">This page is password protected.</div>
+                <div id="passArea">
+                    <p id="passwordPrompt">Password</p>
+                    <p id="hint">Hint: </p>
+                    <input id="pass" type="password" name="pass" autofocus>
+                    <div id="messageWrapper">
+                        <span id="invalidPass" class="error">Sorry, please try again.</span>
+                        <span id="trycatcherror" class="error">Sorry, something went wrong.</span>
+                        <span id="success" class="notifyText">Success!</span>
+                        &nbsp;
+                    </div>
+                    <div id="buttonWrapper">
+                        <button id="toggleLanguage">En</button>
+                        <button id="submitPass" type="button">Submit</button>
+                    </div>
+                </div>
+                <div id="securecontext" class="error">
+                    <p>
+                        Sorry, but password protection only works over a secure connection. Please load this page via HTTPS.
+                    </p>
+                </div>
+                <div id="nocrypto" class="error">
+                    <p>
+                        Your web browser appears to be outdated. Please visit this page using a modern browser.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        window.pl = "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";
+    </script>
+    <script src="/assets/js/pagecrypt.js"></script>
+</body>
+</html>

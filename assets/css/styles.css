@@ -78,6 +78,26 @@ body {
   text-align: right;
 }
 
+@media (max-width: 768px) {
+  body {
+    min-width: auto;
+    background-size: auto 100%;
+  }
+  .content {
+    width: 95%;
+    padding: 30px;
+    font-size: 18px;
+  }
+  .content::before {
+    background-size: 20%;
+    background-position: calc(0% + 30px) calc(100% - 30px);
+  }
+  .content p {
+    text-indent: 1em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+}
 .navbar {
   font-family: "DancingScript-SemiBold", sans-serif;
   font-size: 20px;

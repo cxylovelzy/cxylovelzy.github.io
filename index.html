@@ -1,86 +1,69 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Test</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
-  </head>
-  <body>
-    <audio id="bgMusic" loop preload="auto">
-      <source src="/assets/audios/%E8%8C%89%E3%81%B2%E3%82%8B%20-%20%E5%88%9D%E6%81%8B.mp3" type="audio/mpeg">
-    </audio>
-    
-    <div id="music-controls" class="hidden">
-      <button id="play-pause-btn" class="control-icon pause"></button>
-      <button id="mute-btn" class="control-icon mute"></button>
-      <input id="volume-control" type="range" min="0" max="1" step="0.01" value="1">
-    </div>
-
-    <script>
-      // 检测用户交互
-      function handleUserInteraction() {
-        var audio = document.getElementById('bgMusic');
-        audio.play().then(() => {
-          // 移除隐藏样式，显示音乐控制栏
-          document.getElementById('music-controls').classList.remove('hidden');
-        }).catch(error => {
-          console.error('Error playing audio:', error);
-        });
-        // 移除事件监听器，避免重复触发
-        document.removeEventListener('click', handleUserInteraction);
-        document.removeEventListener('scroll', handleUserInteraction);
-      }
-
-      // 监听点击和滚动事件
-      document.addEventListener('click', handleUserInteraction);
-      document.addEventListener('scroll', handleUserInteraction);
-
-      // 音乐播放控制
-      document.getElementById('play-pause-btn').addEventListener('click', function() {
-        var audio = document.getElementById('bgMusic');
-        if (audio.paused) {
-          audio.play();
-          this.classList.remove('play');
-          this.classList.add('pause');
-        } else {
-          audio.pause();
-          this.classList.remove('pause');
-          this.classList.add('play');
-        }
-      });
-
-      // 音量控制
-      document.getElementById('volume-control').addEventListener('input', function() {
-        var audio = document.getElementById('bgMusic');
-        audio.volume = this.value;
-      });
-
-      // 静音控制
-      document.getElementById('mute-btn').addEventListener('click', function() {
-        var audio = document.getElementById('bgMusic');
-        if (audio.muted) {
-          audio.muted = false;
-          this.classList.remove('unmute');
-          this.classList.add('mute');
-        } else {
-          audio.muted = true;
-          this.classList.remove('mute');
-          this.classList.add('unmute');
-        }
-      });
-    </script>
-
-    <nav class="navbar">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test</title>
+        <link rel="stylesheet" href="/assets/css/styles.css">
+    </head>
+    <body>
+        <nav class="navbar">
     <div class="nav-links">
-    
-        <a href="/" class="current">Home</a>
-    
-        <a href="/about.html">About</a>
-    
+        
+            <a href="/" class="current">Home</a>
+        
+            <a href="/about.html">About</a>
+        
     </div>
 </nav>
-    <font face="DancingScript-SemiBold" size="10">Love <i>♥</i> Letter</font>
+        
+<audio id="bgMusic" loop preload="auto">
+    <source src="/assets/audios/%E8%8C%89%E3%81%B2%E3%82%8B%20-%20%E5%88%9D%E6%81%8B.mp3" type="audio/mpeg">
+</audio>
+
+<div id="music-controls" class="hidden">
+    <input id="volume-bar" type="range" min="0" max="1" step="0.01" value="0">
+    <button id="play-pause-btn" class="control-icon pause">
+        <span class="play-icon"></span>
+        <span class="pause-icon"></span>
+    </button>
+    <button id="mute-btn" class="control-icon mute">
+        <span class="mute-icon"></span>
+        <span class="unmute-icon"></span>
+    </button>
+</div>
+<script src="/assets/js/bgmbar.js"></script>
+        <div class="content">
+            <div class="salutation">
+亲爱的XXX:
+</div>
+
+<p>请允许我第一次这样称呼你（虽然这个称谓早已在我的心间酝酿过千百回），如你所见，这是一封蓄谋已久的告白信——或者说，是某个笨拙的恋爱新手终于鼓足勇气，将满溢的爱意化作文字传递给你。</p>
+
+<p>我该从何说起呢，就从你现在所听到的这首BGM说起吧（什么？你没开声音(ﾟдﾟ)，那现在打开还来得及）。我在24年十二月的第二个星期三清晨听到了这首名为《初恋》的歌，当我发觉歌词中的每一条都如同自己内心的独白时，我想我应该是无可救药地喜欢上你了。沉醉于你举手投足的温润，着迷于你专注热爱时眼底的星芒，惊喜于某个清晨你挑选的特别饮品，沦陷在每一次味蕾与心灵的双重共鸣里。这些细碎的光点，像春天的第一缕风唤醒整片森林，让我在每一个清晨都更确信——你是我最不愿错过的风景。</p>
+
+<p>时至今日，我依旧有一种不真实感</p>
+
+<p>之所以选择使用告白信的形式，一方面是为了留个纪念，另一方面也是因为我希望你可以在冷静之后再给出你的答案（才不是因为不敢当面表白…）。在我看来，感性的冲动决定爱情的开始，理性的选择决定爱情的归宿。我希望的是一份在深思熟虑后的爱情</p>
+
+<p>关于未来，我不敢承诺，因为轻诺必寡信。我</p>
+
+<p>最后，无论你是不是属于我的花，我都很感激你在我生命中的绽放，感谢你让我对爱情和生活都有了新的理解与向往。</p>
+
+<div class="closing">
+喜欢你的XXX
+</div>
+<div class="closing">
+1/？To be continue？
+</div>
 
 
-  </body>
+        </div>
+        <!-- footer.html -->
+<footer>
+    <div class="footer-block">
+        &copy; Cao Xinye. All rights reserved.
+    </div>
+</footer>
+    </body>
 </html>
