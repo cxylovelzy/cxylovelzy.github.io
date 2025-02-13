@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
     };
 
-    let currentLang = 'zh'; // 默认语言为英文
+    let currentLang = 'zh'; // 默认语言为中文
 
     function updateTexts(lang) {
         document.getElementById('dialogText').textContent = langTexts[lang].dialogText;
