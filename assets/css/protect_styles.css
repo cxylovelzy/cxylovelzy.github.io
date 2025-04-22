@@ -1,0 +1,149 @@
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Microsoft YaHei", sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+#dialogWrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: table;
+    background-color: gainsboro;
+}
+
+#dialogWrapCell {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#mainDialog {
+    max-width: 400px;
+    margin: 5px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    overflow: hidden;
+    text-align: left;
+}
+#mainDialog > * {
+    padding: 10px 30px;
+}
+#passArea {
+    font-size: 16px;
+    padding: 20px 30px;
+    background-color: white;
+}
+
+#dialogText {
+    color: white;
+    /* background-image: linear-gradient(to right, rgb(75, 75, 75) 0%, rgb(182, 182, 182)  100%); */
+    background-color: gray;
+    font-size: 16px;
+    text-align: left;
+    height: 18px;
+}
+
+#passArea > * {
+    margin: 5px auto;
+}
+#pass {
+    width: 100%;
+    height: 24px;
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+#messageWrapper {
+    float: left;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+#buttonWrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.notifyText {
+    display: none;
+}
+
+#invalidPass {
+    color: rgb(245, 67, 67);
+}
+
+#success {
+    color: rgb(112, 173, 71);
+}
+
+#toggleLanguage, #submitPass {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: rgb(112, 173, 71);
+    border: none;
+    cursor: pointer;
+    color: white;
+    width: 35%;
+    height: 35px;
+    padding: 8px 15px;
+    margin-left: 10px;
+}
+
+
+
+#toggleLanguage:hover, #submitPass:hover {
+    background-color: rgb(83, 129, 53);
+}
+
+/* #toggleLanguage, #submitPass {background-image: linear-gradient(to right, rgb(104, 189, 48) 0%, rgb(83, 129, 53) 50%, rgb(104, 189, 48)  100%)}
+#toggleLanguage, #submitPass {
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    background-position: right center;
+    color: white;          
+    box-shadow: 0 0 20px #eee;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    display: block;
+    width: 30%;
+    height: 35px;
+    padding: 8px 15px;
+    margin: 10px;
+} */
+
+#toggleLanguage:hover, #submitPass:hover {
+    background-position: left center;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+#contentFrame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.error {
+    display: none;
+    color: red;
+}

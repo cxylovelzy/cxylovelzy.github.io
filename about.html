@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Password Protected Page</title>
+    <link rel="stylesheet" href="/assets/css/protect_styles.css">
+</head>
+<body>
+    <iframe id="contentFrame" frameBorder="0" allowfullscreen></iframe>
+    <div id="dialogWrap">
+        <div id="dialogWrapCell">
+            <div id="mainDialog">
+                <div id="dialogText">This page is password protected.</div>
+                <div id="passArea">
+                    <p id="passwordPrompt">Password</p>
+                    <input id="pass" type="password" name="pass" autofocus>
+                    <div id="messageWrapper">
+                        <span id="invalidPass" class="error">Sorry, please try again.</span>
+                        <span id="trycatcherror" class="error">Sorry, something went wrong.</span>
+                        <span id="success" class="notifyText">Success!</span>
+                        &nbsp;
+                    </div>
+                    <div id="buttonWrapper">
+                        <button id="toggleLanguage">En</button>
+                        <button id="submitPass" type="button">Submit</button>
+                    </div>
+                </div>
+                <div id="securecontext" class="error">
+                    <p>
+                        Sorry, but password protection only works over a secure connection. Please load this page via HTTPS.
+                    </p>
+                </div>
+                <div id="nocrypto" class="error">
+                    <p>
+                        Your web browser appears to be outdated. Please visit this page using a modern browser.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        window.pl = "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";
+    </script>
+    <script src="/assets/js/pagecrypt.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Password Protected Page</title>
+    <link rel="stylesheet" href="/assets/css/protect_styles.css">
+</head>
+<body>
+    <iframe id="contentFrame" frameBorder="0" allowfullscreen></iframe>
+    <div id="dialogWrap">
+        <div id="dialogWrapCell">
+            <div id="mainDialog">
+                <div id="dialogText">This page is password protected.</div>
+                <div id="passArea">
+                    <p id="passwordPrompt">Password</p>
+                    <p id="hint">Hint: </p>
+                    <input id="pass" type="password" name="pass" autofocus>
+                    <div id="messageWrapper">
+                        <span id="invalidPass" class="error">Sorry, please try again.</span>
+                        <span id="trycatcherror" class="error">Sorry, something went wrong.</span>
+                        <span id="success" class="notifyText">Success!</span>
+                        &nbsp;
+                    </div>
+                    <div id="buttonWrapper">
+                        <button id="toggleLanguage">En</button>
+                        <button id="submitPass" type="button">Submit</button>
+                    </div>
+                </div>
+                <div id="securecontext" class="error">
+                    <p>
+                        Sorry, but password protection only works over a secure connection. Please load this page via HTTPS.
+                    </p>
+                </div>
+                <div id="nocrypto" class="error">
+                    <p>
+                        Your web browser appears to be outdated. Please visit this page using a modern browser.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 这里定义页面特定的加密数据
+        window.pl = "在此填入当前页面特有的加密字符串";
+    </script>
+    <script src="/assets/js/pagecrypt.js"></script>
+</body>
+</html>
